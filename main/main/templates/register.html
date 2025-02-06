@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+   <form method="POST" action="" id="meuForm>
+      {% csrf_token %}
+      {{ form.as_p }}  
+      <button type="submit">Submit</button>
+   </form>
+
+   <script>
+      var meuForm = document.getElementById("meuForm");
+      console.log('rodou')
+      meuForm.onsubmit = function(){
+         console.log('enviado')
+         }
+   </script>
+{% endblock content %}
