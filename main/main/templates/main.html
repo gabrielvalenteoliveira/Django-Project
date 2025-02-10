@@ -9,10 +9,16 @@
       <header>
          <nav><h1>LOGO</h1></nav>
       </header>
-      {% block content %}
 
+      {% if messages %}
+         {% for message in messages %}
+            {{message}}
+         {% endfor %}
+      {% endif %}
+      
+      {% block content %}
       {% endblock content %}
 
-      <footer style="margin-top: 400px;"><p>Footer</p></footer>
+      <footer style="margin-top: 400px;"><p><a href="{% url 'home' %}">Back to home</a></p></footer>
 </body>
 </html>

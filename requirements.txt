@@ -1,0 +1,4 @@
+psycopg[binary]
+dj-database-url
+python-decouple 
+gunicorn 
