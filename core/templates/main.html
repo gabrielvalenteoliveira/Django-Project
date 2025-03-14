@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>App</title>
+</head>
+<body>
+      <header>
+         <nav><h1>LOGO</h1></nav>
+      </header>
+
+      {% if messages %}
+         {% for message in messages %}
+            {{message}}
+         {% endfor %}
+      {% endif %}
+      
+      {% block content %}
+      {% endblock content %}
+
+      <footer style="margin-top: 400px;"><p><a href="{% url 'home' %}">Back to home</a></p></footer>
+</body>
+</html>

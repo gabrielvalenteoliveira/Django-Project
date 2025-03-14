@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+   <form method="POST" action="" id="meuForm>
+      {% csrf_token %}
+      {{ form.as_p }}  
+      <button type="submit">Submit</button>
+   </form>
+</div>
+
+
+
+{% if form.errors %}
+   <div>
+      <div class="errors">
+         <ul>
+            {% for field, errors in form.errors.items %}
+               {% for error in errors %}
+                  <li>{{ field }} : {{ error }}</li>
+               {% endfor %}
+            {% endfor %}      
+         </ul>
+      </div>
+   </div>
+{% endif %}
+
+
+{% endblock content %}

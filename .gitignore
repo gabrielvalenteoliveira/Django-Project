@@ -1,0 +1,23 @@
+# Ambiente virtual
+venv/
+env/
+virtualenv/
+
+# Arquivos de configuração sensíveis
+.env
+
+# Arquivos de bytecode Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de log
+*.log
+
+# Banco de dados local (se aplicável)
+*.sqlite3
+
+# Diretórios de build e pacotes
+dist/
+build/
+*.egg-info/

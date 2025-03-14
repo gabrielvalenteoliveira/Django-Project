@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:17
+    ports:
+      - "5433:5433"  # Ajustado para a porta padrão do Postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=PGPASSWORD
+      - POSTGRES_DB=PGDATABASE
+      - POSTGRES_USER=PGUSER
+    env_file:
+      - .env
+
+  django-web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"  # Adicionado para expor a porta do Django no host
+
+volumes:
+  postgres_data:
